@@ -1,0 +1,19 @@
+{
+  "name": "dummy",
+  "version": "1.0.0",
+  "description": "this is dummy app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "angualrjs"
+  ],
+  "author": "edureka",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.3.2",
+    "zone.js": "^0.8.26"
+  }
+}
