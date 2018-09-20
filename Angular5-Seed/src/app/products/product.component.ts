@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product.model';
 
 @Component({
     selector: 'app-product',
@@ -10,7 +11,7 @@ export class ProductComponent {
     showTable: Boolean = true;
     showImage: Boolean = false;
     filterData: String = 'Leaf';
-    products: any[] = [
+    products: IProduct[] = [
             {
                 '_id': '5a05dacc734d1d68d42d31f3',
                 'productId': 1,

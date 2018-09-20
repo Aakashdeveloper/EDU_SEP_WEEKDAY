@@ -18,7 +18,18 @@
                 <h3>Number od Product Found:</h3>
             </div>
         </div> 
-        {{showImage}}                               
+        {{showImage}} 
+        <!--<div *ngFor="let product of products | myproductFilter:filterData">
+        <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">{{product.productName}}</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="media-right">
+              <img [src]="product.imageUrl" class="media-object" style="width:60px">
+            </div>
+          </div> 
+        </div>   -->                         
         <div class="table-response" *ngIf="products && products.length">
         <table class="table">
                     <thead>
@@ -38,16 +49,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of products | myproductFilter:filterData">
                         <td>
                             <img [src]="product.imageUrl"
                                  class="img-fluid"   *ngIf="showImage"/>
                         </td>
-                        <td>{{product.productName | uppercase}}</td>
-                        <td>{{product.productCode | lowercase}}</td>
+                        <td>{{product.productName | myCase : "upper"}}</td>
+                        <td>{{product.productCode | myCase : "lower"}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price | currency :'GBP'}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td>{{product.price | discount | currency :'GBP'}}</td>
+                        <td><app-star></app-star></td>
                     </tr>
                 </tbody>
             </table>
